@@ -1,0 +1,407 @@
+# Mutual Fund Analytics Capstone Project
+
+## Executive Summary
+
+The Mutual Fund Analytics Capstone Project was developed to build a complete end-to-end analytics solution for the mutual fund industry. The project covered data ingestion, cleaning, storage, exploratory analysis, performance evaluation, dashboard development, and advanced analytics.
+
+The objective was to transform raw mutual fund datasets into meaningful insights for investors and analysts. The project utilized Python, SQLite, Jupyter Notebook, and Power BI to analyze fund performance, investor behavior, SIP trends, and portfolio concentration.
+
+Key outputs included a robust ETL pipeline, analytical database, performance metrics such as Sharpe Ratio and Value at Risk (VaR), an interactive Power BI dashboard, and advanced analytics such as investor cohort analysis and SIP continuity assessment.
+
+---
+
+# 1. Introduction
+
+Mutual funds play a critical role in helping investors participate in financial markets while benefiting from professional fund management. The rapid growth of the mutual fund industry has created a need for data-driven analysis to support investment decisions.
+
+This project aims to leverage data analytics techniques to evaluate mutual fund performance, understand investor behavior, and provide actionable insights through visualization and advanced analytical models.
+
+---
+
+# 2. Project Objectives
+
+The primary objectives of this project were:
+
+* Build an automated ETL pipeline.
+* Clean and transform raw mutual fund datasets.
+* Store processed data in SQLite for analysis.
+* Conduct exploratory data analysis.
+* Compute risk and performance metrics.
+* Develop an interactive Power BI dashboard.
+* Perform advanced analytics on investors and portfolios.
+* Generate professional documentation and deliverables.
+
+---
+
+# 3. Data Sources
+
+The project utilized multiple datasets covering different aspects of the mutual fund ecosystem.
+
+## 3.1 Fund Master Data
+
+Contains information about:
+
+* Scheme Name
+* Fund House
+* Category
+* Plan Type
+* Risk Grade
+
+## 3.2 NAV History
+
+Historical Net Asset Value data used for:
+
+* Return calculation
+* Volatility analysis
+* Risk measurement
+
+## 3.3 SIP Data
+
+Contains monthly SIP statistics including:
+
+* SIP inflows
+* Active SIP accounts
+* New SIP registrations
+
+## 3.4 Holdings Data
+
+Portfolio composition information used for:
+
+* Concentration analysis
+* Sector allocation studies
+
+## 3.5 Investor Transactions
+
+Contains investor-level transactions including:
+
+* Transaction amount
+* Transaction type
+* State
+* City tier
+* Investor demographics
+
+## 3.6 Benchmark Data
+
+Used for comparative performance analysis.
+
+---
+
+# 4. ETL Pipeline Design
+
+## 4.1 Data Ingestion
+
+Raw datasets were collected and loaded into Python using Pandas.
+
+The ingestion process included:
+
+* File validation
+* Schema verification
+* Initial quality checks
+
+## 4.2 Data Cleaning
+
+Data cleaning activities included:
+
+* Missing value handling
+* Duplicate removal
+* Data type corrections
+* Standardization of categorical fields
+
+## 4.3 Data Transformation
+
+Transformations included:
+
+* Date formatting
+* Return calculations
+* Aggregations
+* Derived metrics creation
+
+## 4.4 Database Loading
+
+Processed datasets were loaded into SQLite.
+
+The database served as a centralized analytical repository for reporting and dashboard development.
+
+[Insert ETL Architecture Diagram]
+
+---
+
+# 5. Database Design
+
+The SQLite database was designed using a relational structure.
+
+Key tables:
+
+* fund_master_clean
+* nav_history_clean
+* scheme_performance_clean
+* investor_transactions_clean
+* sip_clean
+* holdings_clean
+* category_clean
+* benchmark_clean
+* aum_clean
+* folios_clean
+
+Relationships were established using AMFI codes and date fields to support integrated analysis.
+
+[Insert Database Schema Screenshot]
+
+---
+
+# 6. Exploratory Data Analysis
+
+## 6.1 Industry AUM Trends
+
+Analysis of Assets Under Management (AUM) revealed consistent growth in the mutual fund industry.
+
+Major observations:
+
+* Industry AUM increased steadily over time.
+* Large AMCs dominated industry assets.
+* Growth was supported by increasing SIP participation.
+
+[Insert AUM Trend Chart]
+
+---
+
+## 6.2 Fund Category Analysis
+
+Category-level analysis showed:
+
+* Equity funds attracted significant investor interest.
+* Debt funds exhibited lower volatility.
+* Hybrid categories provided balanced risk-return characteristics.
+
+[Insert Category Analysis Chart]
+
+---
+
+## 6.3 Investor Demographics
+
+Investor analysis indicated:
+
+* Younger investors showed greater SIP participation.
+* Urban investors contributed higher transaction volumes.
+* Different age groups displayed distinct investment behaviors.
+
+[Insert Investor Demographics Chart]
+
+---
+
+# 7. Performance Analytics
+
+## 7.1 Sharpe Ratio
+
+Sharpe Ratio measures risk-adjusted return.
+
+Higher Sharpe Ratios indicate superior performance relative to volatility.
+
+Key findings:
+
+* Certain funds consistently outperformed peers.
+* High Sharpe funds offered attractive risk-adjusted returns.
+
+---
+
+## 7.2 Beta Analysis
+
+Beta measures sensitivity to market movements.
+
+Findings:
+
+* Aggressive funds displayed higher beta values.
+* Conservative funds exhibited lower market sensitivity.
+
+---
+
+## 7.3 Historical VaR
+
+Historical Value at Risk (95%) was computed using the 5th percentile of daily returns.
+
+Findings:
+
+* Certain funds demonstrated higher downside exposure.
+* Risk levels varied significantly across categories.
+
+[Insert VaR Table]
+
+---
+
+## 7.4 Conditional VaR (CVaR)
+
+CVaR measures average losses beyond the VaR threshold.
+
+Findings:
+
+* Tail risk was substantially larger than indicated by VaR alone.
+* CVaR provided a more realistic assessment of extreme downside scenarios.
+
+---
+
+# 8. Dashboard Development
+
+An interactive Power BI dashboard was developed to support decision-making.
+
+## 8.1 Industry Overview
+
+Features:
+
+* Total AUM
+* SIP Inflows
+* Folios
+* Number of Schemes
+* AUM Trend
+* Fund House Comparison
+
+[Insert Industry Overview Screenshot]
+
+---
+
+## 8.2 Fund Performance
+
+Features:
+
+* Return vs Risk Scatter Plot
+* Fund Performance Table
+* NAV Trend Analysis
+
+[Insert Fund Performance Screenshot]
+
+---
+
+## 8.3 Investor Analytics
+
+Features:
+
+* State-wise Transactions
+* Transaction Type Distribution
+* Age Group Analysis
+* Monthly Transaction Volume
+
+[Insert Investor Analytics Screenshot]
+
+---
+
+## 8.4 SIP & Market Trends
+
+Features:
+
+* SIP Inflow Trends
+* Active SIP Accounts
+* Category Inflows
+* SIP Growth Analysis
+
+[Insert SIP & Market Trends Screenshot]
+
+---
+
+# 9. Advanced Analytics
+
+## 9.1 Rolling 90-Day Sharpe
+
+Rolling Sharpe analysis was performed for selected funds to observe risk-adjusted performance over time.
+
+[Insert Rolling Sharpe Chart]
+
+---
+
+## 9.2 Investor Cohort Analysis
+
+Investors were grouped by first transaction year.
+
+Analysis included:
+
+* Average SIP amount
+* Total invested amount
+* Fund preference trends
+
+Findings showed distinct behavioral differences between cohorts.
+
+---
+
+## 9.3 SIP Continuity Analysis
+
+Investors with six or more SIP transactions were analyzed.
+
+Results:
+
+* Average transaction gaps were calculated.
+* Investors with gaps greater than 35 days were flagged as at-risk.
+
+---
+
+## 9.4 Fund Recommendation Engine
+
+A simple recommendation engine was developed.
+
+Inputs:
+
+* Low Risk
+* Moderate Risk
+* High Risk
+
+Recommendations were generated using Sharpe Ratio rankings within each risk category.
+
+---
+
+## 9.5 Sector HHI Concentration Analysis
+
+Portfolio concentration was measured using the Herfindahl-Hirschman Index (HHI).
+
+Findings:
+
+* Certain funds exhibited high concentration.
+* Diversification levels varied significantly across portfolios.
+
+---
+
+# 10. Key Findings
+
+1. Mutual fund industry assets demonstrated strong growth over the study period.
+
+2. SIP inflows remained a major driver of industry expansion.
+
+3. High Sharpe Ratio funds delivered superior risk-adjusted returns.
+
+4. Investor cohorts exhibited different investment behaviors and preferences.
+
+5. SIP continuity analysis identified investors at risk of discontinuing investments.
+
+6. Portfolio concentration varied significantly among equity funds.
+
+7. Tail risk analysis highlighted the importance of considering CVaR in addition to VaR.
+
+---
+
+# 11. Limitations
+
+The project has several limitations:
+
+* Historical coverage may be limited.
+* Certain datasets may contain assumptions or synthetic values.
+* Market conditions change over time.
+* The recommendation engine uses simplified rules.
+
+---
+
+# 12. Recommendations
+
+Future improvements include:
+
+* Integrating live market feeds.
+* Expanding historical data coverage.
+* Enhancing recommendation models using machine learning.
+* Deploying dashboards online for broader accessibility.
+* Incorporating predictive analytics.
+
+---
+
+# 13. Conclusion
+
+The Mutual Fund Analytics Capstone Project successfully demonstrated the complete analytics lifecycle from data ingestion to advanced analysis and visualization.
+
+The project delivered meaningful insights into fund performance, investor behavior, SIP trends, and portfolio concentration. Through the integration of Python, SQLite, Jupyter Notebook, and Power BI, the project created a scalable and professional analytics solution suitable for investment analysis and decision support.
+
+The outcomes highlight the value of data analytics in understanding financial markets and supporting informed investment decisions.
+
